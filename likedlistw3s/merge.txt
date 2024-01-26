@@ -1,0 +1,27 @@
+node*temp =head ; 
+node*current = head2 ;
+node*next = temp  -> link ; 
+node*create ; 
+while (current!=NULL ){//to review 
+temp = head ; 
+next = head -> link ; 
+if(temp->data <=current ->data && next->data > current ->data  ){
+create = malloc(sizeof(node)) ; 
+create ->data = current ->data ; 
+create ->link = next ; 
+temp   -> link = create; 
+head = temp ; 
+temp = create ; 
+next = next -> link ; 
+}
+else if(temp->data >current ->data ){
+    create = malloc(sizeof(node)) ; 
+    create ->link = head ; 
+    create ->data = current-> data ; 
+    head = create ; 
+    temp = create ; 
+    next = temp ->link ; 
+}
+current = current ->link ; 
+}
+return head ; 
